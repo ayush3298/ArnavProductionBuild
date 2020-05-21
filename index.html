@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Dnhsecheronui</title>
+  <base href="/"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+  <!-- font-awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+    rel="stylesheet">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+    integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc="
+    crossorigin="anonymous"
+  />
+  <script
+    src="https://kit.fontawesome.com/07b594d3de.js"
+    crossorigin="anonymous"
+  ></script>
+  <!-- Bootstrap CSS -->
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous"
+  />
+  <!--  -->
+
+  <!-- Bootstrap script -->
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-media-queries/0.6.1/match-media.min.js.map"></script>
+  <!--  -->
+
+  <!-- full page js -->
+  <script src="https://res.cloudinary.com/ayush1904/raw/upload/v1581328226/fullpage.min_up75yz.js"></script>
+  <!--  -->
+
+  <!-- script for counter js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery.counterup@2.1.0/jquery.counterup.min.js"></script>
+  <!--  -->
+
+  <!-- timeline js -->
+  <script src="https://res.cloudinary.com/dcsv3ndru/raw/upload/v1585994651/jquery.circlemenu.min_nrsrwm.js"></script>
+
+  <script src="https://res.cloudinary.com/dcsv3ndru/raw/upload/v1585994633/jquery.circlemenu_k0h5pa.js"></script>
+  <!--  -->
+  <!-- three.js -->
+  <script src="//unpkg.com/three"></script>
+  <script src="//unpkg.com/three-trackballcontrols-web/dist/three-trackballcontrols.min.js"></script>
+  <script src="//unpkg.com/three-globe"></script>
+  <!--<script src="../../dist/three-globe.js"></script>-->
+  <!-- animated -->
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+/>
+<link rel="stylesheet" href="styles.90a8f660dd79698040e5.css"></head>
+<body>
+<app-root></app-root>
+<script src="runtime-es2015.0811dcefd377500b5b1a.js" type="module"></script><script src="runtime-es5.0811dcefd377500b5b1a.js" nomodule defer></script><script src="polyfills-es5.fd3af48698f9b02947d9.js" nomodule defer></script><script src="polyfills-es2015.442fa3cc45520cc0d518.js" type="module"></script><script src="scripts.12c10ece169dc29c88f4.js" defer></script><script src="main-es2015.bd2ace7fa957cd75ceb5.js" type="module"></script><script src="main-es5.bd2ace7fa957cd75ceb5.js" nomodule defer></script></body>
+
+<!-- script for full page js -->
+<script>
+  $(document).ready(function () {
+    $(".horizontals").pagepiling({
+      menu: null,
+      direction: "horizontal",
+      verticalCentered: true,
+      sectionsColor: [],
+      anchors: [],
+      scrollingSpeed: 700,
+      easing: "swing",
+      loopBottom: false,
+      loopTop: false,
+      css3: true,
+      menu: "#menu",
+      normalScrollElements: null,
+      normalScrollElementTouchThreshold: 5,
+      touchSensitivity: 5,
+      keyboardScrolling: true,
+      sectionSelector: ".section",
+      animateAnchor: false,
+
+      //events
+      onLeave: function (index, nextIndex, direction) {
+      },
+      afterLoad: function (anchorLink, index) {
+      },
+      afterRender: function () {
+      },
+    });
+  });
+</script>
+
+<!-- script for counter js -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    function counter(id, start, end, duration) {
+      let obj = document.getElementById(id),
+        current = start,
+        range = end - start,
+        increment = end > start ? 1 : -1,
+        step = Math.abs(Math.floor(duration / range)),
+        timer = setInterval(() => {
+          current += increment;
+          obj.textContent = current;
+          if (current == end) {
+            clearInterval(timer);
+          }
+        }, step);
+    }
+
+    counter("count1", 0, 55, 4000);
+    counter("count2", 100, 30, 2500);
+    counter("count3", 0, 20, 4000);
+    counter("count4", 0, 500, 3000);
+    counter("count5", 0, 800, 3000);
+    counter("count6", 4500, 5000, 10);
+  });
+
+  $('#logo-section').carousel({
+    interval: 3000,
+    cycle: true
+  });
+</script>
+
+<script>
+  function navBarColor() {
+    document.getElementById("top_contact_bar").style.background = "#D9D9D9";
+    document.getElementById("ico_search_bar_moving").style.border =
+      "1px solid white";
+    document.getElementById("bgNavBar").style.background = "transparent";
+    document.getElementById("logo_control_sub_home").style.width = "230px";
+  }
+
+  function navBarColorBefore() {
+    document.getElementById("top_contact_bar").style.background = "#F5F5F5";
+    document.getElementById("ico_search_bar_moving").style.border =
+      "1px solid #E8E8E8";
+    document.getElementById("bgNavBar").style.background = "white";
+    document.getElementById("logo_control_sub_home").style.width = "180px";
+  }
+
+  //
+  function mainProducthoverin() {
+    document.getElementById("style-3").style.height = "500px";
+  }
+
+  function mainProducthoverout() {
+    document.getElementById("style-3").style.height = "auto";
+  }
+</script>
+
+<!--  -->
+<script>
+  $(".navbar-nav>li>a").on("click", function () {
+    $(".navbar-collapse").collapse("hide");
+  });
+</script>
+
+<!-- time line js  -->
+<script type="text/javascript">
+  $(document).ready(function () {
+    $(".wheel").circleMenu({
+      lockDirection: true,
+      dragMouse: true,
+      dragTouch: true,
+    });
+  });
+
+
+</script>
+</html>
