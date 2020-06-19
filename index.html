@@ -7,7 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="icon" type="image/x-icon" href="favicon.ico"/>
   <!-- font-awesome -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
@@ -74,13 +76,116 @@
   <!--<script src="../../dist/three-globe.js"></script>-->
   <!-- animated -->
   <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
-/>
-<link rel="stylesheet" href="styles.3e2b118efb8b644f6773.css"></head>
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
+  <script type="text/javascript"
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASYjLEvbe81q2qVNp-_KoGG4guxFhOK3M"></script>
+  <script type="text/javascript"
+          src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
+  <script type="text/javascript">
+    var map;
+    var mc;
+    var markers = new Array();
+    var marker_popup = new google.maps.InfoWindow(); //oggetto popup
+    var j = 0;
+    var tempStores = null;
+
+    var mapstyle = [
+      {
+        "featureType": "administrative",
+        "stylers": [
+          {"visibility": "off"}
+        ]
+      }, {
+        "featureType": "landscape",
+        "stylers": [
+          {"visibility": "off"}
+        ]
+      }, {
+        "featureType": "poi",
+        "stylers": [
+          {"visibility": "off"}
+        ]
+      }, {
+        "featureType": "road",
+        "stylers": [
+          {"visibility": "off"}
+        ]
+      }, {
+        "featureType": "transit",
+        "stylers": [
+          {"visibility": "off"}
+        ]
+      }, {
+        "featureType": "water",
+        "stylers": [
+          {"visibility": "on"},
+          {"color": "#FFFFFF"}
+        ]
+      }
+    ];
+
+    var mapOptions = {
+      center: {lat: 41.8673886, lng: 12.6767601},
+      zoom: 2,
+      styles: mapstyle,
+      panControl: false,
+      zoomControl: true,
+      scaleControl: false,
+      mapTypeControl: false,
+      scrollwheel: false,
+      streetViewControl: false,
+      zoomControlOptions: {
+        style: google.maps.ZoomControlStyle.SMALL
+      }
+    };
+
+
+    function addMarkers(stores) {
+      markers = [];
+      var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+      google.maps.event.addListener(map, 'zoom_changed', function () {
+        if (map.getZoom() < 2) map.setZoom(2);
+      });
+      window.setTimeout(function () {
+        map.setCenter(markers[0].getPosition());
+        marker_popup.setContent(stores[0].desc);
+        marker_popup.open(map, markers[0]);
+      }, 2000);
+      tempStores = stores;
+      for (i = 0; i < stores.length; i++) {
+        markers[i] = new google.maps.Marker({
+          position: new google.maps.LatLng(stores[i].lat_c, stores[i].long_c),
+          map: map,
+          icon: 'https://www.reggianariduttori.com/assets/images/marker_distributore.png',
+          title: stores[i].name,
+          animation: google.maps.Animation.DROP
+        });
+        j++;
+        addMarkersClickListener(i, stores, map);
+
+      }
+    }
+
+    function addMarker(i, stores, map) {
+      addMarkersClickListener(i, stores, map);
+      j++;
+    }
+
+    function addMarkersClickListener(i, stores, map) {
+      google.maps.event.addListener(markers[i], 'click', function () {
+        marker_popup.setContent(stores[i].desc);
+        marker_popup.open(map, markers[i]);
+      });
+    }
+
+  </script>
+
+<link rel="stylesheet" href="styles.1bd69f41f9aaf56420dc.css"></head>
 <body>
 <app-root></app-root>
-<script src="runtime-es2015.0811dcefd377500b5b1a.js" type="module"></script><script src="runtime-es5.0811dcefd377500b5b1a.js" nomodule defer></script><script src="polyfills-es5.fd3af48698f9b02947d9.js" nomodule defer></script><script src="polyfills-es2015.442fa3cc45520cc0d518.js" type="module"></script><script src="scripts.12c10ece169dc29c88f4.js" defer></script><script src="main-es2015.9f35fef77c4e99cb8383.js" type="module"></script><script src="main-es5.9f35fef77c4e99cb8383.js" nomodule defer></script></body>
+<script src="runtime-es2015.0811dcefd377500b5b1a.js" type="module"></script><script src="runtime-es5.0811dcefd377500b5b1a.js" nomodule defer></script><script src="polyfills-es5.e94ba732172de6683982.js" nomodule defer></script><script src="polyfills-es2015.442fa3cc45520cc0d518.js" type="module"></script><script src="scripts.12c10ece169dc29c88f4.js" defer></script><script src="main-es2015.670302c0bf0e8925f9f0.js" type="module"></script><script src="main-es5.670302c0bf0e8925f9f0.js" nomodule defer></script></body>
 
 <!-- script for full page js -->
 <script>
@@ -195,10 +300,11 @@
 </script>
 
 <script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-}
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+  }
 </script>
 
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </html>
