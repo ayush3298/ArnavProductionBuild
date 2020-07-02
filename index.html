@@ -150,15 +150,16 @@
       });
       window.setTimeout(function () {
         map.setCenter(markers[0].getPosition());
-        marker_popup.setContent(stores[0].desc);
+        marker_popup.setContent(stores[0].html_desc);
         marker_popup.open(map, markers[0]);
       }, 2000);
       tempStores = stores;
       for (i = 0; i < stores.length; i++) {
         markers[i] = new google.maps.Marker({
-          position: new google.maps.LatLng(stores[i].lat_c, stores[i].long_c),
+          position: new google.maps.LatLng(stores[i].lattitude, stores[i].longitude),
           map: map,
-          icon: 'https://www.reggianariduttori.com/assets/images/marker_distributore.png',
+          icon: stores[i]['pin_pointer']['image'],
+          // icon: 'https://www.reggianariduttori.com/assets/images/marker_distributore.png',
           title: stores[i].name,
           animation: google.maps.Animation.DROP
         });
@@ -175,7 +176,7 @@
 
     function addMarkersClickListener(i, stores, map) {
       google.maps.event.addListener(markers[i], 'click', function () {
-        marker_popup.setContent(stores[i].desc);
+        marker_popup.setContent(stores[i].html_desc);
         marker_popup.open(map, markers[i]);
       });
     }
@@ -185,7 +186,7 @@
 <link rel="stylesheet" href="styles.1bd69f41f9aaf56420dc.css"></head>
 <body>
 <app-root></app-root>
-<script src="runtime-es2015.0811dcefd377500b5b1a.js" type="module"></script><script src="runtime-es5.0811dcefd377500b5b1a.js" nomodule defer></script><script src="polyfills-es5.e94ba732172de6683982.js" nomodule defer></script><script src="polyfills-es2015.442fa3cc45520cc0d518.js" type="module"></script><script src="scripts.12c10ece169dc29c88f4.js" defer></script><script src="main-es2015.9a8306e87ab31e6c898a.js" type="module"></script><script src="main-es5.9a8306e87ab31e6c898a.js" nomodule defer></script></body>
+<script src="runtime-es2015.0811dcefd377500b5b1a.js" type="module"></script><script src="runtime-es5.0811dcefd377500b5b1a.js" nomodule defer></script><script src="polyfills-es5.e94ba732172de6683982.js" nomodule defer></script><script src="polyfills-es2015.442fa3cc45520cc0d518.js" type="module"></script><script src="scripts.12c10ece169dc29c88f4.js" defer></script><script src="main-es2015.7b20b7688bb031c2db7e.js" type="module"></script><script src="main-es5.7b20b7688bb031c2db7e.js" nomodule defer></script></body>
 
 <!-- script for full page js -->
 <script>
